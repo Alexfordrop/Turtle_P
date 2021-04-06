@@ -1,7 +1,10 @@
 import turtle
 import time
+import random
 
 WIDTH, HEIGHT = 500, 500
+COLORS = ['red', 'green', 'blue', 'orange', 'yellow',
+ 'black', 'purple', 'pink', 'brown', 'cyan']
 
 def get_number_of_racers():
     racers = 0
@@ -18,6 +21,18 @@ def get_number_of_racers():
         else:
             print("Число гонщиков может быть от 2 до 10. Попробуй снова!")
 
+def create_turtles(colors):
+    turtle = []
+    for i, color in enumerate(colors):
+        racer = turtle.Turtle()
+        recer.color(color)
+        racer.shape('turtle')
+        racer.left(90)
+        racer.penup()
+        # позиция черепашки
+        racer.pendown()
+        turtles.append(racer)
+
 def init_turtle():
     screen = turtle.Screen()
     screen.setup(WIDTH, HEIGHT)
@@ -26,10 +41,7 @@ def init_turtle():
 racers = get_number_of_racers()
 init_turtle()
 
-racer = turtle.Turtle()
-racer.forward(100)
-racer.left(90)
-racer.forward(100)
-racer.right(90)
-racer.backward(100)
-time.sleep(20)
+random.shuffle(COLORS)
+colors = COLORS[:racers]
+create_turtles(colors)
+
